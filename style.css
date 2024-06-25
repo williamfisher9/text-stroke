@@ -9,7 +9,8 @@
 
 body {
     width: 100dvw;
-    height: 100dvh;
+    overflow-x: hidden;
+    background-attachment: scroll;
     background: url("./assets/1.jpg") center / cover no-repeat;
 }
 
@@ -31,7 +32,7 @@ body {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
 
-    font-size: 200px;
+    font-size: 10rem;
     font-family: 'Shadows Into Light', sans-serif;
 
     position: relative;
@@ -77,6 +78,49 @@ body {
     -webkit-background-clip: text;
 
     font-size: 10rem;
+}
+
+.text4 {
+    background-image: linear-gradient(to right,
+        black, yellow, black, yellow, black
+     , yellow, black);
+
+     animation: mover 5s linear infinite;
+
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: transparent;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 10rem;
+}
+
+.text5 {
+    background-image: linear-gradient(to right, red 20%, yellow);
+
+     animation: mover 5s linear infinite;
+
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: transparent;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 10rem;
+}
+
+@keyframes mover {
+    from {
+        background-position: -1000px;
+    }
+
+    to {
+        background-position: 1000px;
+    }
+    
 }
 
 @keyframes colorSwitcher {
