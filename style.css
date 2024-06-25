@@ -23,7 +23,7 @@ body {
 }
 
 
-h1 {
+.text1 {
     text-transform: uppercase;
 
     -webkit-text-fill-color: transparent;
@@ -37,8 +37,8 @@ h1 {
     position: relative;
 }
 
-h1::before {
-    content: "text";
+.text1::before {
+    content: "line";
     position: absolute;
     height: 100%;
     width: 100%;
@@ -48,4 +48,85 @@ h1::before {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: green;
     text-shadow: 2px 2px 2px yellow;
+}
+
+.text2 {
+    background-image: linear-gradient(to right, blue, red, yellow, green);
+    
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-fill-color: #000119;
+    -webkit-text-stroke-width: 10px;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 8rem;
+    font-weight: 900;
+
+    letter-spacing: 10px;
+}
+
+.text3 {
+    animation: colorSwitcher 2s ease-in-out infinite;
+
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: transparent;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 10rem;
+}
+
+@keyframes colorSwitcher {
+
+    0% {
+        background-image: linear-gradient(to right,
+     yellow, black, yellow, black, yellow
+     , black, yellow);
+
+     text-shadow: 3px 3px 5px yellow;
+    }
+
+    20% {
+        background-image: linear-gradient(to right,
+     green, black, green, black, green
+     , black, green);
+
+     text-shadow: 4px 4px 5px rgb(30, 201, 15);
+    }
+
+    40% {
+        background-image: linear-gradient(to right,
+     rgb(6, 0, 128), black, green, rgb(238, 232, 232), green
+     , black, rgb(128, 0, 38));
+
+     text-shadow: 5px 5px 5px rgb(193, 32, 182);
+    }
+
+    60% {
+        background-image: linear-gradient(to right,
+     green, yellow, green, yellow, green
+     , yellow, green);
+
+     text-shadow: -5px 5px 5px rgb(255, 85, 0);
+    }
+
+    80% {
+        background-image: linear-gradient(to right,
+     green, black, green, black, green
+     , black, green);
+
+     text-shadow: -4px 4px 5px yellow;
+    }
+
+    100% {
+        background-image: linear-gradient(to right,
+     green, yellow, green, yellow, green
+     , yellow, green);
+
+     text-shadow: -5px 5px 5px rgb(30, 232, 7);
+    }
+    
 }
